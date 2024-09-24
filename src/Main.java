@@ -19,14 +19,11 @@ public class Main {
     static void start() {
         // Game loop
         while (true){
-            if (!alive) {
-                window.paint(window.getGraphics());
-            } else {
+            if (alive) {
                 Bird.update();
                 Pipe.updatePipes();
-
-                window.paint(window.getGraphics());
             }
+            window.repaint();
             Pipe.CURRENT_PIPE_SPEED +=0.005f;
             delay(1000 / targetFPS);
         }
